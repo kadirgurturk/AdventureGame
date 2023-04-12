@@ -9,6 +9,7 @@ import com.kadirgurturk.Items.Item;
 import com.kadirgurturk.Items.Weapon.Gun;
 import com.kadirgurturk.Items.Weapon.Rifle;
 import com.kadirgurturk.Items.Weapon.Sword;
+import com.kadirgurturk.Items.Weapon.Weapon;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -22,10 +23,10 @@ public class Store extends NormalLoc {
 
     private Player buy(Player player, Item ıtem) {
         if (ıtem instanceof Armor) {
-            player.getInventory().setArmor(ıtem);
+            player.getInventory().setArmor((Armor) ıtem);
 
         } else {
-            player.getInventory().setWeapon(ıtem);
+            player.getInventory().setWeapon((Weapon) ıtem);
         }
 
         return player;
@@ -76,7 +77,7 @@ public class Store extends NormalLoc {
         switch (val) {
             case 1: {
                 var light = new LightArmor();
-                if (money > light.getPrice()) {
+                if (money >= light.getPrice()) {
                     money -= light.getPrice();
                     super.getPlayer().getCharacter().setMoney(money);
                     buy(getPlayer(), light);
@@ -89,7 +90,7 @@ public class Store extends NormalLoc {
             }
             case 2: {
                 var mid = new MidArmor();
-                if (money > mid.getPrice()) {
+                if (money >= mid.getPrice()) {
                     money -= mid.getPrice();
                     super.getPlayer().getCharacter().setMoney(money);
                     buy(getPlayer(), mid);
@@ -102,7 +103,7 @@ public class Store extends NormalLoc {
             }
             case 3: {
                 var heavy = new HeavyArmor();
-                if (money > heavy.getPrice()) {
+                if (money >= heavy.getPrice()) {
                     money -= heavy.getPrice();
                     super.getPlayer().getCharacter().setMoney(money);
                     buy(getPlayer(), heavy);
@@ -153,7 +154,7 @@ public class Store extends NormalLoc {
         switch (val) {
             case 1: {
                 var gun = new Gun();
-                if (money > gun.getPrice()) {
+                if (money >= gun.getPrice()) {
                     money -= gun.getPrice();
                     super.getPlayer().getCharacter().setMoney(money);
                     buy(getPlayer(), gun);
@@ -166,7 +167,7 @@ public class Store extends NormalLoc {
             }
             case 2: {
                 var sword = new Sword();
-                if (money > sword.getPrice()) {
+                if (money >= sword.getPrice()) {
                     money -= sword.getPrice();
                     super.getPlayer().getCharacter().setMoney(money);
                     buy(getPlayer(), sword);
@@ -179,7 +180,7 @@ public class Store extends NormalLoc {
             }
             case 3: {
                 var rifle = new Rifle();
-                if (money > rifle.getPrice()) {
+                if (money >= rifle.getPrice()) {
                     money -= rifle.getPrice();
                     super.getPlayer().getCharacter().setMoney(money);
                     buy(getPlayer(), rifle);

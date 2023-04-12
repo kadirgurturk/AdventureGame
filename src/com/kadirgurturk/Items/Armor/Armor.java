@@ -3,33 +3,15 @@ package com.kadirgurturk.Items.Armor;
 import com.kadirgurturk.Items.Item;
 
 public abstract class Armor extends Item {
-    private int id;
-    private String name;
-    private int Defense;
-    private int price;
+    private int defense;
 
     public Armor(int id, String name, int defense, int price) {
-        this.id = id;
-        this.name = name;
-        Defense = defense;
-        this.price = price;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-
-    public String getName() {
-        return name;
-    }
-
-    public int getPrice() {
-        return price;
+        super(id, name, price);
+        this.defense = defense;
     }
 
     public int getDefense() {
-        return Defense;
+        return defense;
     }
 
 

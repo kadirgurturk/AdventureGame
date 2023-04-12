@@ -5,11 +5,34 @@ import com.kadirgurturk.Items.Item;
 import com.kadirgurturk.Items.Weapon.Weapon;
 
 public class Inventory {
-    private boolean water;
-    private boolean food;
-    private boolean firewoord;
-    private Item armor;
-    private Item weapon;
+    private boolean water = false;
+    private boolean food = false;
+    private boolean firewoord = false;
+    private Armor armor;
+    private Weapon weapon;
+
+    public String checkItem(boolean ıtem){
+            if(ıtem){
+                return "var";
+            }
+            else{
+                return "yok";
+            }
+    }
+
+    public String checkItem(Item ıtem){
+        if(ıtem != null){
+            if(ıtem instanceof Weapon){
+                return String.format(" adi: " + weapon.getName() + " hasari: " + weapon.getDamage());
+            }else if(ıtem instanceof Armor){
+                return String.format(" adi: " + armor.getName() + " savunmasi: " + armor.getDefense());
+            }
+
+        }else{
+            return " Yok";
+        }
+        return null;
+    }
 
     public boolean isWater() {
         return water;
@@ -35,19 +58,20 @@ public class Inventory {
         this.firewoord = firewoord;
     }
 
-    public Item getArmor() {
+    public Armor getArmor() {
         return armor;
     }
 
-    public void setArmor(Item armor) {
+    public void setArmor(Armor armor) {
         this.armor = armor;
     }
 
-    public Item getWeapon() {
+    public Weapon getWeapon() {
+
         return weapon;
     }
 
-    public void setWeapon(Item weapon) {
+    public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
     }
 }

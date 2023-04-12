@@ -19,7 +19,7 @@ public class SafeHouse extends NormalLoc{
     @Override
     public void Location() {
         System.out.println("-------------------");
-        System.out.println("Güvenli Evdesiniz. Canınız Fulleniyor");
+        System.out.println("Guvenli Evdesiniz. Caniniz Fulleniyor");
         var id = getPlayer().getCharacter().getId();
 
         switch (id){
