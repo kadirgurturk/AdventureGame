@@ -1,7 +1,7 @@
 # Adventure Game
 
 ### Bu uygulama Patika.dev [projelerinden](https://academy.patika.dev/courses/java-102/advgame-1) biridir. 
-### Action Game metin bazlı RPG türünden bir oyundur. Amacımız oyuna başladığımız köyün çevresindeki tehlikeli bölgelerdeki düşmanları yenip o bölgeye özel eşyayı envantere almak ve bu 3 eşya ile SafeHouse'a gelmektir.
+### AdventureGame metin bazlı RPG türünden bir oyundur. Amacımız oyuna başladığımız köyün çevresindeki tehlikeli bölgelerdeki düşmanları yenip o bölgeye özel eşyayı envantere almak ve bu 3 eşya ile SafeHouse'a gelmektir.
 
 ##Oynanış ve Dinamikler
 + Oyun bize önce karakterimize bir isim vermemizi daha sonra Samuray,Okçu ve Şövalye sınıflarından birini seçmemizi ister.
