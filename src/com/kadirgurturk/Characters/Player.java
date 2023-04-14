@@ -21,7 +21,7 @@ public class Player {
                     "Para: "+character.getMoney() + "\n" +
                     "Envanter: " + "\n" +
                     "   Su: " + inventory.checkItem(inventory.isWater())+ "\n" +
-                    "   Yemek: " + inventory.checkItem(inventory.isFood())+ "\n" +
+                    "   Yemek: " + inventory.checkItem(inventory.isFirewoord())+ "\n" +
                     "   Odun: " + inventory.checkItem(inventory.isFood())+ "\n" +
                     "   Silah: " + inventory.checkItem(inventory.getWeapon())+ "\n" +
                     "   Zırh: " + inventory.checkItem(inventory.getArmor())+ "\n" +

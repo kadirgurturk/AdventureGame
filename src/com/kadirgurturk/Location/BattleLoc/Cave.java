@@ -43,16 +43,19 @@ public class Cave extends BattleLoc{
             if(obs.get(obs.size()- 1).getHealth() <= 0 ){
                 obs.remove(obs.size()- 1);
                 if(obs.size() < 1){
-                    System.out.println("Burayi temizledin. Ödülün Yemek ve 10 Para, Canın'da: "+ getPlayer().getCharacter().getHealth() );
+                    System.out.println("Burayi temizledin. Ödülün Yemek ve " +obstacleNum*4+ " Para, Canın'da: "+ getPlayer().getCharacter().getHealth() );
+
                     getPlayer().getInventory().setFood(true);
-                    getPlayer().getCharacter().setMoney(getPlayer().getCharacter().getMoney()+10);
+
+
+                    getPlayer().getCharacter().setMoney(getPlayer().getCharacter().getMoney()+obstacleNum*4);
                     break;
                 }
             }
             System.out.println("zombi vuruyor");
             obsAttack();
-            if(getPlayer().getCharacter().getHealth() < 0){
-                System.out.println("Öldün...");
+            if(getPlayer().getCharacter().getHealth() < 1){
+                System.out.println("Cıkıs");
                 break;
             }
             System.out.println("Canınız: " + getPlayer().getCharacter().getHealth());

@@ -43,17 +43,18 @@ public class Forest extends BattleLoc{
             if(obs.get(obs.size()- 1).getHealth() <= 0 ){
                 obs.remove(obs.size()- 1);
                 if(obs.size() < 1){
-                    System.out.println("Buradaki tüm vampirleri temizledin. Ödülün Odun ve 14 Para; Canın'da: "+ getPlayer().getCharacter().getHealth() );
+                    System.out.println("Buradaki tüm vampirleri temizledin. Ödülün Odun ve " +obstacleNum*6+ " Para; Canın'da: "+ getPlayer().getCharacter().getHealth() );
+
                     getPlayer().getInventory().setFirewoord(true);
 
-                    getPlayer().getCharacter().setMoney(getPlayer().getCharacter().getMoney()+14);
+                    getPlayer().getCharacter().setMoney(getPlayer().getCharacter().getMoney()+obstacleNum*6);
                     break;
                 }
             }
             System.out.println("Vampir vuruyor");
             obsAttack();
             if(getPlayer().getCharacter().getHealth() < 0){
-                System.out.println("Öldün");
+
                 break;
             }
             System.out.println("Canınız: " + getPlayer().getCharacter().getHealth());

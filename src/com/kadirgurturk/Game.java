@@ -50,7 +50,7 @@ public class Game {
                 break;
             }
         }
-        System.out.println("Macerayi Tamamlamak Icin Odun, Su ve Yemek Itemalrini Toplamalısınız, Topladıktan Sonra Güvenli Eve Gelmelisiniz");
+        System.out.println("Macerayi Tamamlamak Icin Odun, Su ve Yemek Itemalarini Toplamalisiniz, Topladiktan Sonra Güvenli Eve Gelmelisiniz");
         System.out.println("Bu Itemlar Koyun Disindaki ve Tehlikeli Bolgelerde, Bu Yuzden Dikkat Et");
         System.out.println("Macera Basliyor " + player.getName());
         SafeHouse();
@@ -148,18 +148,21 @@ public class Game {
             case 1:{
                 var river = new River(player,"Nehir");
                 river.Location();
+                isDead();
                 TownExıt();
                 break;
             }
             case 2:{
                 var cave = new Cave(player,"Magara");
                 cave.Location();
+                isDead();
                 TownExıt();
                 break;
             }
             case 3:{
                 var forest = new Forest(player,"Orman");
                 forest.Location();
+                isDead();
                 TownExıt();
                 break;
             }
@@ -175,6 +178,28 @@ public class Game {
             default:{
                 TownExıt();
             }
+        }
+    }
+
+    public void isDead(){
+
+        if(player.getCharacter().getHealth() < 1){
+            System.out.println("---------------------------------------------------");
+            System.out.println("Öldünüz...");
+            System.out.println("Baştan Baslamak icin 1'e");
+            System.out.println("Oyundan Cıkmak icin herhangi bir tusa basınız");
+
+            var val = Integer.parseInt(sc.nextLine());
+
+            switch (val){
+                case 1:{
+                    start();
+                }
+                default:{
+                    System.exit(0);
+                }
+            }
+
         }
     }
 }

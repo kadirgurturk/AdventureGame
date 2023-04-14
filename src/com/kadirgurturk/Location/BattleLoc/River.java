@@ -42,16 +42,16 @@ public class River extends BattleLoc{
             if(obs.get(obs.size()- 1).getHealth() <= 0 ){
                 obs.remove(obs.size()- 1);
                 if(obs.size() < 1){
-                    System.out.println("Buradaki tüm ayilari temizledin. Ödülün Su ve 17 Para; Canın'da: "+ getPlayer().getCharacter().getHealth() );
+                    System.out.println("Buradaki tüm ayilari temizledin. Ödülün Su ve " +obstacleNum*8+ " Para; Canın'da: "+ getPlayer().getCharacter().getHealth() );
                     getPlayer().getInventory().setWater(true);
-                    getPlayer().getCharacter().setMoney(getPlayer().getCharacter().getMoney()+17);
+                    getPlayer().getCharacter().setMoney(getPlayer().getCharacter().getMoney()+obstacleNum*8);
                     break;
                 }
             }
             System.out.println("Ayı vuruyor");
             obsAttack();
-            if(getPlayer().getCharacter().getHealth() < 0){
-                System.out.println("Öldün");
+            if(getPlayer().getCharacter().getHealth() < 1){
+                System.out.println("Cıkıs");
                 break;
             }
             System.out.println("Canınız: " + getPlayer().getCharacter().getHealth());
